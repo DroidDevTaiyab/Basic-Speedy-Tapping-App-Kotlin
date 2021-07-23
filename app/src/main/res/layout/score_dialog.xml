@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
-    android:background="#3B07AE">
-
+    android:background="#1B0351"
+    android:padding="16dp">
 
     <TextView
         android:id="@+id/tv_totalScore_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
         android:gravity="center"
-        android:text="Total Taps: 0"
         android:padding="16dp"
-        android:textSize="20sp"
+        android:text="Total Taps: 0"
         android:textColor="#63F3CF"
-        android:fontFamily="sans-serif-thin"
-        android:textStyle="bold"
+        android:textSize="22sp"
         app:layout_constraintTop_toBottomOf="@+id/tv_scoreTitle"
         tools:layout_editor_absoluteX="0dp" />
 
@@ -27,16 +24,15 @@
         android:id="@+id/tv_scoreTitle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="22dp"
+        android:fontFamily="cursive"
         android:gravity="center"
         android:text="Your Score"
-        android:layout_marginTop="22dp"
         android:textColor="@color/white"
-        android:textSize="24sp"
-        android:fontFamily="cursive"
+        android:textSize="32sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
-
 
     <Button
         android:id="@+id/btn_tryAgain"

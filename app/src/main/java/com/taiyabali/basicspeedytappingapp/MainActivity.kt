@@ -14,7 +14,7 @@ import java.util.*
 import java.util.concurrent.TimeUnit
 
 /**
- * Created by Techpass Master on 01-Apr-21.
+ * Created by Techpass Master
  * Website - https://techpassmaster.com/
  * Email id - hello@techpassmaster.com
  */
@@ -40,14 +40,14 @@ class MainActivity : AppCompatActivity() {
 
                 currentTaps++                   // increment current tabs
 
-                //  random for generating random color
+                //  generate random color
                 //  rgb (red green blue)
                 //  alpha(a) use for color transparency (Value must be ≤ 255 (was 600))
                 val rnd = Random()
                 val color = Color.argb(255, rnd.nextInt(255), rnd.nextInt(255), rnd.nextInt(255))
                 binding.container.setBackgroundColor(color)
 
-                tvTaps.text=("Taps:$currentTaps")           //  set taps count
+                tvTaps.text=("Taps: $currentTaps")           //  set taps count
 
             }
 
@@ -75,32 +75,29 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                alertDialog()
+                tapsScoreAlertDialog()
                 currentTaps = 0
                 countDownTimer.cancel()
                 binding.ivTapCircle.isEnabled = false
 
             }
-
         }.start()
     }
 
-    private fun alertDialog() {
-
+    private fun tapsScoreAlertDialog() {
         val builder = AlertDialog.Builder(this)
         val view: View = LayoutInflater.from(this).inflate(R.layout.score_dialog, null)
         builder.setView(view)
 
-        val tv_totalTaps: TextView = view.findViewById(R.id.tv_totalScore_result)
-        val tv_tryAgain: Button = view.findViewById(R.id.btn_tryAgain)
+        val tvTotalTaps: TextView = view.findViewById(R.id.tv_totalScore_result)
+        val tvTryAgain: Button = view.findViewById(R.id.btn_tryAgain)
 
-        tv_totalTaps.text = ("Total Taps: $currentTaps")
+        tvTotalTaps.text = ("Total Taps: $currentTaps")
 
         val alertDialog = builder.create()
         alertDialog.setCanceledOnTouchOutside(false)
 
-        tv_tryAgain.setOnClickListener {
-
+        tvTryAgain.setOnClickListener {
             alertDialog.dismiss()
             binding.btnStartTapping.visibility = View.VISIBLE
         }
